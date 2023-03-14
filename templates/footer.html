@@ -1,0 +1,40 @@
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/footer.css' %}"
+/>
+
+<footer>
+  <div class="container-xl">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>IOttaRent</h5>
+        <p>123 Baseline<br />Ottawa, Ontario<br />Canada</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Links</h5>
+        <ul>
+          <li><a href="{% url 'post_ad' %}">Post Ad</a></li>
+          <li><a href="{% url 'listing' %}">Listing</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Follow Us</h5>
+        <ul class="social">
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

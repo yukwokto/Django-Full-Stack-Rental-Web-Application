@@ -1,0 +1,86 @@
+.title{
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Center the login form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the input fields and labels */
+.user-name-label,
+.user-password-label {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.user-name-input,
+.user-password-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+/* Style the Sign In button */
+.sign-in {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sign-in:hover {
+  background-color: #5cbf62;
+}
+
+/* Style the error message */
+.messages.error {
+  margin-top: 20px;
+}
+
+/* Style the account sign-up message */
+.account-sign-up {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.account-sign-up p {
+  margin-bottom: 5px;
+}
+
+.account-sign-up a {
+  color: #4caf50;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.account-sign-up a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .login-form {
+    width: 100%;
+    margin: 0;
+  }
+}

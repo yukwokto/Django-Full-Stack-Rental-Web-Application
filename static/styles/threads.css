@@ -1,0 +1,57 @@
+body{
+  background-color: #f5f5f5;
+}
+.big-wrapper {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+h2{
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.message-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+.message-thread h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.message-thread h4 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.message-thread h4 a:hover {
+  text-decoration: underline;
+}
+
+.message-thread span {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.message-thread div {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.message-thread div:hover {
+  background-color: #9eebb4;
+}

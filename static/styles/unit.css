@@ -1,0 +1,90 @@
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  margin: 50px;
+}
+
+#go-back a{
+  text-decoration: none;
+}
+
+.unit-info {
+  padding: 0 100px 0 50px;
+}
+
+.unit-info img {
+  max-width: 100%;
+}
+
+.lable-head{
+  font-weight: bold;
+}
+
+.unit-info h3 {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.unit-info p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.unit-info strong {
+  font-size: 24px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.unit-info a{
+  text-decoration: none;
+  color: lightseagreen;
+}
+
+.dm-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.dm-form input[type="text"],
+.dm-form input[type="email"],
+.dm-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.dm-form input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.dm-form input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.your-ad-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.greet-landlord {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+}

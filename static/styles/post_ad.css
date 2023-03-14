@@ -1,0 +1,81 @@
+/* Centering div-wrapper and adjusting its width */
+.div-wrapper {
+  width: 70%;
+  margin: 30px auto;
+  text-align: left;
+}
+
+/* Styling all input elements */
+input[type="text"],
+input[type="date"],
+textarea {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/* Theme color for the form */
+.post-ad-form {
+  background-color: #c2d6c2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #888888;
+}
+
+/* Good style for textarea input */
+textarea {
+  height: 150px;
+}
+
+/* Adding animation to the form */
+.post-ad-form {
+  animation: formFadeIn 1s ease-in-out;
+}
+
+@keyframes formFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* Styling all buttons */
+button,
+input[type="submit"] {
+  background-color: #7bae7f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-right: 10px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .div-wrapper {
+    width: 100%;
+  }
+}
+
+/* Style for error messages */
+.errorlist {
+  color: red;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.errorlist li {
+  list-style: none;
+}

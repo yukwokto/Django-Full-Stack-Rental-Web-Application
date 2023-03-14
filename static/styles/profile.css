@@ -1,0 +1,149 @@
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  margin-top: 20px;
+  column-gap: 20px;
+}
+
+/*first column*/
+#edit-btn {
+  background: linear-gradient(white, white) padding-box,
+  linear-gradient(to right, darkblue, darkorchid) border-box;
+  border-radius: 50em;
+  border: 4px solid transparent;
+  margin-bottom: 15px;
+}
+
+.user-info {
+  background-color: #f8f8f8;
+  padding: 20px 20px 20px 50px;
+  margin-left: 30px;
+  border: #999 solid 1px;
+  border-radius: 5px;
+}
+
+.profile-picture {
+  margin: 0 auto;
+}
+
+.profile-name {
+  margin-top: 10px;
+  font-size: 28px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+dl {
+  line-height: 1.5;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+dd{
+  text-align: justify;
+}
+p {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+/*second column*/
+.user-listings {
+  padding: 20px;
+}
+
+.listing-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.listing-item {
+  width: calc(50% - 10px);
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.listing-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.listing-item-details {
+  padding: 10px;
+}
+
+.listing-item-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.listing-item-date {
+  margin: 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.listing-item-address {
+  margin: 10px 0;
+}
+
+.listing-item-rent {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.listing-item-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.listing-item-actions a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}

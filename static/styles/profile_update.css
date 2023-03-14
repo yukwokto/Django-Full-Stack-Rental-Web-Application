@@ -1,0 +1,99 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Apply Box Sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Wrapper Styles */
+.profile-update-wrapper {
+  background-color: #c3f2d6;
+  border-radius: 10px;
+  margin: 50px auto;
+  padding: 30px;
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title Styles */
+.edit-title {
+  font-size: 2rem;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Form Styles */
+.profile-update-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Label Styles */
+label {
+  color: #000000;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: #ffffff;
+}
+
+/* Button Styles */
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  background-color: #6bbf59;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+#profile-update-cancel-button {
+  background-color: #d9534f;
+}
+
+#profile-update-save-button {
+  margin-right: 10px;
+}
+
+/* File Input Styles */
+input[type="file"] {
+  margin-bottom: 20px;
+}
