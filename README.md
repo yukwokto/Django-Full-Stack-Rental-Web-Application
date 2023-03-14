@@ -1,6 +1,6 @@
 # IOttaRent (Django-Python-Web-Application)
 
-# Project Description
+## Project Description
 This full-stack web application is built using Django, one of the most popular web frameworks in the Python ecosystem. 
 The objective of the project is to provide comprehensive information about rentals in Ottawa, catering to the needs of tenants, landlords, and realtors alike.
 
@@ -16,13 +16,39 @@ It demonstrates expertise in handling databases and implementing front-end user 
 
 Overall, this application aims to simplify the rental process in Ottawa, making it easier for both tenants and landlords to find their ideal rental properties.
 
-# Table of Contents
-a. Web Application Interface
+## Technology Stack
+* Python
+* HTML/CSS/Javascript/Bootstrap5
+* Django (Login & Authorization/ Object Relational Mapping/ Model-level field validation/ Forms)
+* SQLite
 
 
-## a. Web Application Interface
+## Web Application Interface
+[1. Home Page](#1-home-page)
 
-### 1. Home Page
+[2. About Page](#2-about-page)
+
+[3. Sign-up Selection Page](#3-sign-up-selection-page)
+
+[4. Sign-up Page for User/ Landlord](#4-sign-up-page-for-user-landlord)
+
+[5. Sign-up Page for Realtors](#5-sign-up-page-for-realtors)
+
+[6. Login Page](#6-login-page)
+
+[7. Listing page](#7-listing-page)
+
+[8. Individual Rental Advertisement Page](#8-individual-rental-advertisement-page)
+
+[9. Individual Profile Page](#9-individual-profile-page)
+
+[10. Profile Update Form Page](#10-profile-update-form-page)
+
+[11. Message Thread Page](#11-message-thread-page)
+
+[12. Individual Message Page](#12-individual-message-page)
+
+### 1. Home Page 
 
 At the top of the home page, you will find a navigation bar that enables easy movement to various sections of the website. Users have the option to either login or sign-up to access the features of the site or navigate to their desired pages.
 
@@ -35,7 +61,7 @@ In addition to the navigation bar and body content, the footer at the end of the
 ![home page](/project_demo_image/home_page_3.png)
 ![home page](/project_demo_image/home_page_4.png)
 
-### 2. About Page
+### 2. About Page 
 
 This webpage provides information about the mission, services, responsibility, and technologies used. 
 
@@ -92,7 +118,7 @@ Each page will be showing maximum 5 listings, and the listing page paginates aft
 ![Listing Page](/project_demo_image/listing3.png)
 
 
-- demostration of the filter function
+- demonstration of the filter function
 
 ![Listing Page](/project_demo_image/demo_filter.png)
 
@@ -138,26 +164,17 @@ The lastest message between 2 users will be displayed as well as the timestamp.
 ![Individual Profile Page](/project_demo_image/thread.png)
 
 
+### 12. Individual Message Page
+
+Each user can view their conversation with a specific user in the individual message page.
+Messages sent by different user are highlighted in different colors. 
+
+![Individual Profile Page](/project_demo_image/msg.png)
 
 
+## Acknowledgments: 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+This project is inspired by different rental websites in Canada, such as Padmapper, Kijiji, and RentalCa. 
+Following their interface and functionality, I am able to create my basic rental website with ease. Truly appreciate their guidances on making my full stack web application.
 
 
