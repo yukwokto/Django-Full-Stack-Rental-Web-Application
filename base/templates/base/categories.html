@@ -1,0 +1,7 @@
+<h3 class="listing-title">Categories</h3>
+<a href="{% url 'listing' %}">All</a>
+{% for type in types %}
+<div>
+  <a href="{% url 'listing' %}?a={{type.type}}">{{type.type}}</a>
+</div>
+{% endfor %}

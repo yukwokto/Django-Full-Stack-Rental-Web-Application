@@ -1,0 +1,50 @@
+{% extends 'main.html'%} 
+{% block content %}
+
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/login_form.css' %}"
+/>
+
+{% if page == 'login' %}
+<h2 class="title">Account Login</h2>
+<!--Login form-->
+<form action="" method="POST" class="login-form">
+    {% csrf_token %}
+
+    <label for="username" class="user-name-label">Username:</label>
+    <input id="username" class="user-name-input" type="text" name="username" placeholder="enter username" required>
+    <br>
+    <br>
+    <label for="password" class="user-password-label">Password:</label>
+    <input id="password" class="user-password-input" type="password" name="password" placeholder="enter password" required>
+    <br>
+    <br>
+    <input type="submit" value="Sign In" class="sign-in">
+
+
+    <!--Error Message-->
+    <div class="messages error" style="color: red;">
+        {% if messages %}
+        <p>
+            {% for message in messages %}
+                [{{ message }}]
+            {% endfor %}
+        {% endif %}
+    </p>
+    </div>
+</form>
+
+
+<div class="account-sign-up">
+    <p>Does not have an account?</p>
+    <p><a href="{% url 'select_account_type' %}">Sign-up</a> now!</p>
+</div>
+
+
+{% endif %}
+
+{% endblock %}

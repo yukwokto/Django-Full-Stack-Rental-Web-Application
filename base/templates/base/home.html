@@ -1,0 +1,69 @@
+{% extends 'main.html'%} {% block content %} {% load static %}
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <h1 class="text-center mb-5">Welcome to IOttaRent</h1>
+      <p class="lead text-center">
+        Welcome to our rental website, where finding your perfect home in Ottawa
+        is our top priority! Our website is dedicated to connecting renters with
+        reliable and up-to-date rental listings throughout the city.
+      </p>
+
+      <div class="card-deck">
+        <div class="card mb-3 card-space">
+          <img
+            src="{% static 'images/living-room.jpg' %}"
+            class="card-img-top"
+            alt="House 1"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Search for Your Perfect Home</h5>
+            <p class="card-text">
+              We understand that searching for rentals can be a daunting and
+              time-consuming process, which is why we've created a user-friendly
+              platform to simplify your search. Our website offers a range of
+              rental options to meet the diverse needs of our users, whether
+              you're a student, young professional, or family looking for a
+              place to call home.
+            </p>
+          </div>
+        </div>
+
+        <div class="card mb-3 card-space">
+          <img
+            src="{% static 'images/bedroom.jpg' %}"
+            class="card-img-top"
+            alt="House 2"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Stress-Free Rental Search</h5>
+            <p class="card-text">
+              At IOttaRent, we are committed to providing a seamless and
+              stress-free rental search experience. Our website is accessible
+              from any device, making it easy to search for your dream home on
+              the go.
+            </p>
+          </div>
+        </div>
+
+        <div class="card mb-3 card-space">
+          <img
+            src="{% static 'images/kitchen.jpg' %}"
+            class="card-img-top"
+            alt="House 3"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Find Your Next Home Today</h5>
+            <p class="card-text">
+              We take pride in our attention to detail and dedication to helping
+              renters find the perfect rental in Ottawa. Start your search today
+              and let us help you find your next home!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

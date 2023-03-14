@@ -1,0 +1,90 @@
+{% extends 'main.html' %} {% block content %}
+
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/unit.css' %}"
+/>
+
+
+<div class="content-wrapper">
+  <div>
+    <div class="unit-info">
+      
+      {% if unit.unit_iamge %}
+      <img width=500 src="{{ unit.unit_iamge.url }}" alt="Unit Photo" />
+      {% endif %}
+
+      <br />
+      <strong>{{unit.title}}</strong>
+      <!--Title-->
+      <h3>{{unit.post_title}}</h3>
+      <!--Title of the advertisement-->
+
+      <p><span class="lable-head">Description:</span>  {{unit.description}}</p>
+      <!--description of the apartment-->
+
+      <p><span class="lable-head">Address: </span>{{unit.address}}</p>
+      <!--address of the apartment-->
+
+      <p><span class="lable-head">Amenities included: </span>{{unit.amenities}}</p>
+      <!--amenities included in the apartment-->
+
+      <p><span class="lable-head">Rent:</span> ${{unit.rent}}/month</p>
+      <!--rent per month of the apartment-->
+
+      <p><span class="lable-head">Availability:</span> {{unit.availability}}</p>
+      <!--availability (date) of the apartment-->
+
+      <p><span class="lable-head">Categories: </span>{{unit.category.type}}</p>
+      <!--Categories (1-bedroom/ 2-bedroom-apartment/ single room/ basement/ housing) of the apartment-->
+      <br />
+      <hr>
+      <p><span class="lable-head">Landlord: </span><a href="{% url 'profile_page' unit.landlord.id %}">{{unit.landlord.username}}</a></p>
+      <!--landlord name of the apartment-->
+
+      <p><span class="lable-head">Date Posted: </span>{{unit.date_posted |date:"Y-m-d" }}</p>
+      <!--date posted on the rental website-->
+      <br>
+      <button id="go-back"><a href="{% url 'listing' %}">Back</a></button>
+
+    </div>
+  </div>
+
+  <div>
+    {% if request.user.is_authenticated and request.user != unit.landlord %}
+
+    <h3>Interested?</h3>
+    <h3>Send an Enquiry Now!</h3>
+    <form action="" method="POST" class="dm-form">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" value="Send message">
+    </form>
+
+    {% elif request.user.is_authenticated and request.user == unit.landlord %}
+    <h3 class="your-ad-title">Your AD</h3>
+
+    <p class="greet-landlord">Thank you for choosing to post your rental property on our website.
+      Your decision to list your property with us is greatly appreciated, 
+      and we are confident that our platform will provide you with a wide pool of potential tenants. 
+      We hope that you will find the perfect tenant who meets all of your requirements 
+      and that your experience with our website exceeds your expectations. 
+      Please do not hesitate to reach out to us if you have any questions or concerns, 
+      as we are always here to assist you. 
+      Once again, thank you for trusting us with your rental property.</p>
+
+    {% else %}
+
+    <h3>Interested?</h3>
+    <h3>Send an Enquiry Now!</h3>
+    <p>To send an enquiry, please <a href="{% url 'login' %}">sign in</a></p>
+
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'main.html'%} {% block content %}
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/post_ad.css' %}"
+/>
+
+<div class="div-wrapper">
+<h4 class="form-title">Posting Your Place</h4>
+
+<form action="" method="POST" enctype="multipart/form-data" class="post-ad-form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button><a href="{% url 'listing' %}">Cancel</a></button>
+    <input type="submit" value="post ad">
+</form>
+
+</div>
+{% endblock%}

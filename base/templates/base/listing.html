@@ -1,0 +1,151 @@
+{% extends 'main.html' %} {% block content %}
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/listing.css' %}"
+/>
+
+
+<div class="content-wrapper">
+  
+  <div class="search-function">
+    <h3>Search</h3>
+    <!--Search Bar-->
+    <form action="{% url 'listing' %}" method="GET">
+      <!--Search for related content-->
+      <input
+        type="text"
+        name="q"
+        placeholder="What are you looking for?"
+        size="25"
+      />
+      <br />
+      <!--Search for budget range-->
+      <p>Budget Range:</p>
+      <input type="text" name="minbudget" placeholder="min" size="3" />
+      <span>-</span>
+      <input type="text" name="maxbudget" placeholder="max" size="3" />
+      <p style="color: red; font-style: italic;">
+        {% if messages %}
+        {% for message in messages %}
+          [{{ message }}]
+        {% endfor %}
+        {% endif %}
+      </p>
+      <input type="submit" value="set filter" />
+    </form>
+
+    <br />
+
+    <a href="{% url 'listing' %}"><button>Reset Filter</button></a>
+    <br>
+    <br>
+    <hr />
+    <br>
+    <!--Category Section-->
+    {% include 'base/Categories.html' %}
+  </div>
+
+
+  <!--individual post here-->
+  <div class="unit-listing">
+    <h2 class="listing-title">Current Units: {{ava}} listing(s) available</h2>
+
+    <div class="unit-wrapper">
+      {% for unit in cur_listings %}
+
+      <!--Unit image-->
+      <div>
+        {% if unit.unit_iamge %}
+        <img
+          width="210px"
+          height="170px"
+          src="{{ unit.unit_iamge.url }}"
+          alt="Unit Photo"
+        />
+        {% endif %}
+      </div>
+
+      <div>
+        {% if request.user == unit.landlord %}
+        <a href="{% url 'update_ad' unit.id %}">Edit</a>
+        <a href="{% url 'delete_ad' unit.id %}">Delete</a>
+        {% endif %}
+        <div>
+          <h4>
+            {{unit.post_title}}
+            <br>
+            <small
+              >@{{unit.date_posted | date:"d-m-Y"}} posted by
+              <a href="{% url 'profile_page' unit.landlord.id %}">{{unit.landlord.username}}</a></small
+            >
+          </h4>
+          <p>address: {{unit.address}}</p>
+          <p>Rent: ${{unit.rent}}/month</p>
+          <a href="{% url 'unit' unit.id %}"><button>View Details</button></a>
+          <br />
+          <br />
+          <!-- <hr /> -->
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!--Pagination Section-->
+
+<!--Pagination Section-->
+    <div class="pagination">
+      {% if cur_listings.has_previous %}
+        <a href="?{{ query_string }}page=1">&laquo First</a>
+        <a href="?{{ query_string }}page={{ cur_listings.previous_page_number }}">Previous</a>
+      {% endif %}
+  
+      Page {{cur_listings.number}} of {{cur_listings.paginator.num_pages}}
+  
+      {% if cur_listings.has_next %}
+        <a href="?{{ query_string }}page={{ cur_listings.next_page_number }}">Next</a>
+        <a href="?{{ query_string }}page={{ cur_listings.paginator.num_pages }}">&raquo Last</a>
+      {% endif %}
+    </div>
+
+    <!-- <div class="pagination">
+      {% if cur_listings.has_previous %}
+      <a href="?page=1">&laquo First</a>
+      <a href="?page={{ cur_listings.previous_page_number }}">Previous</a>
+      
+      {% endif %}
+      
+      Page {{cur_listings.number}} of {{cur_listings.paginator.num_pages}}
+
+      {% if cur_listings.has_next %}
+        <a href="?page={{ cur_listings.next_page_number }}">Next</a>
+
+        <a href="?page={{ cur_listings.paginator.num_pages }}">Last &raquo</a>
+      {% endif %}
+    </div> -->
+    <br>
+  </div>
+
+  <!--Newly joined realtor-->
+  <div class="realtors-wrapper">
+    <h2 class="listing-title">Featured Realtors</h2>
+
+    <!--Individual Realtor-->
+    {% for realtor in featured_realtors %}
+    <div>
+      <img src="{{realtor.avatar.url}}" alt="profile picture" style="width: 200px; height: 200px;">
+      <p>Name: <a href="{% url 'profile_page' realtor.user.id %}">{{realtor.user.username}}</a></p>
+      <p>Company: {{realtor.company}}</p>
+      <hr>
+    </div>
+    {% endfor %}
+
+  </div>
+
+
+
+</div>
+
+{% endblock %}

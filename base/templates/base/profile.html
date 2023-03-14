@@ -1,0 +1,103 @@
+{% extends 'main.html' %} {% block content %}
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/profile.css' %}"
+/>
+
+<div class="content-wrapper">
+  <div class="user-info">
+    {% if request.user == user%}
+        <a href="{% url 'profile_update' %}"><button id="edit-btn">Edit Profile</button> </a>
+    {% endif %}
+
+    {% if profile.avatar %}
+    <div class="profile-picture">
+        <img width="100" src="{{ profile.avatar.url }}" alt="Icon" />
+    </div>
+    {% endif %}
+
+    <h1 class="profile-name">{{user.username}}</h1>
+
+    <dl>
+      <dt>About Me:</dt>
+      <br />
+      <dd>{{profile.bio}}</dd>
+    </dl>
+
+    <hr />
+
+    <h4>Contact Information</h4>
+
+    <p>Email: {{user.email}}</p>
+
+    <p>Phone Number: {{profile.phone_number}}</p>
+
+    {% if account_type == 'Realtor' %}
+    <p>Company: {{profile.company}}</p>
+    {% endif %}
+
+    <hr>
+    {% if request.user != profile.user %}
+    <h4>Leave me a message:</h4>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" value="Send message">
+      {% if messages %}
+      <div class="messages">
+      {% for message in messages %}
+        <p> {{ message }} </p>
+      {% endfor %}
+      </div>
+      {% endif %}
+    </form>
+    {% endif %}
+  </div>
+
+  <div class="user-listings">
+    <p>My Current listing:</p>
+
+    <div class="listing-wrapper">
+        
+    {% for unit in current_listings %} {% if unit %}
+      <div>
+        {% if unit.unit_iamge %}
+        <img
+          width="155px"
+          height="120px"
+          src="{{ unit.unit_iamge.url }}"
+          alt="Unit Photo"
+        />
+        {% endif %}
+      </div>
+
+      <div>
+        {% if request.user == unit.landlord %}
+        <small><a href="{% url 'update_ad' unit.id %}">Edit</a></small>
+        <small><a href="{% url 'delete_ad' unit.id %}">Delete</a></small>
+        {% endif %}
+
+        <p class="item-des">
+        <strong>{{unit.post_title}}</strong>
+        <small> @{{unit.date_posted | date:"d-m-Y"}} </small>
+        </p>
+
+        address: {{unit.address}} <br>
+        Rent: ${{unit.rent}}/month <br>
+        <a href="{% url 'unit' unit.id %}"><button>View Details</button></a>
+        {% endif %} 
+        
+      </div>
+      
+      {% endfor %}
+
+    </div>
+    
+  </div>
+
+</div>
+
+{% endblock %}

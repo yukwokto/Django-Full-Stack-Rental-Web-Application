@@ -1,0 +1,22 @@
+{% extends 'main.html' %} {% block content %}
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/create_account.css' %}"
+/>
+
+<div class="create-account-div">
+<h1 class="title">Creating {{account_type}} Account:</h1>
+
+<form action="" method="post" enctype="multipart/form-data" class="create-account-form">
+    {% csrf_token %}
+    {{user_form.as_p}}
+    {{profile_form.as_p}}
+    <input type="submit" class="submit-btn">
+</form>
+<br>
+<a href="{% url 'select_account_type' %}" class="cancel-create"><button>Cancel</button></a>
+</div>
+{% endblock %}

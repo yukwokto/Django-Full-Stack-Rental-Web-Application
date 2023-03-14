@@ -1,0 +1,27 @@
+{% extends 'main.html'%}
+{% load static %}
+{% block content %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/profile_update.css' %}"
+/>
+
+<div class="profile-update-wrapper">
+  <h2 class="edit-title">Edit Profile</h2>
+  
+  <form method="post" enctype="multipart/form-data" class="profile-update-form">
+    {% csrf_token %}
+    <!--Changing user name-->
+    <label for="new-username">New Username: </label>
+    <input id="new-username" type="text" name="newUsername">
+    
+    {{ profile_form.as_p }}
+    <div class="button-container">
+    <button type="submit" id="profile-update-save-button">Save</button>
+    <a href="{{request.META.HTTP_REFERER}}"><button id="profile-update-cancel-button">Cancel</button></a>
+  </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'main.html' %} {% block content %}
+
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/enquiry_message.css' %}"
+/>
+
+<div class="dm-wrapper">
+
+<h2 class="page-title">Conversation with {{chat_with}}</h2>
+<br>
+<br>
+<div class="msg-wrapper">
+<!-- Displaying message with a specific user -->
+{% for message in messages %}
+<div class="each-msg">
+    {% if message.sender == request.user %}
+        <div class="user-msg">
+        <p>{{message.content}}  : you</p>
+        <small>{{message.created_at | time }}</small>
+        </div>
+    {% else %}
+    <div class="other-msg">
+        <p>{{message.sender}} : {{message.content}}</p>
+        <small>{{message.created_at | time }}</small>
+    </div>
+    {% endif %}
+</div>
+{% endfor %}
+</div>
+
+<hr>
+
+<!--sending a message-->
+<div class="send-msg-wrapper message-form">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="send">
+    </form>
+</div>
+
+</div>
+
+<script>
+    const msgWrapper = document.querySelector('.msg-wrapper');
+    msgWrapper.scrollTop = msgWrapper.scrollHeight;
+    window.scrollTo(0, document.body.scrollHeight);
+  </script>
+  
+{% endblock %}

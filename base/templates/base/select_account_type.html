@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/select_account_type.css' %}"
+/>
+
+<div class="container py-5">
+  <h1 class="text-center mb-5">Select Your Account Type</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4 mb-5">
+      <div class="card border-0 rounded-3 shadow-lg">
+        <div class="card-body text-center">
+          <h3 class="card-title">User Account</h3>
+          <br>
+          <p class="card-text">Welcome to our rental website! If you're looking for a place to rent or you have a property to rent out, we encourage you to create an account with us.</p>
+          <a href="{% url 'create_user_account' %}" class="btn btn-primary mt-4">Create an Account</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-5">
+      <div class="card border-0 rounded-3 shadow-lg">
+        <div class="card-body text-center">
+          <h3 class="card-title">Realtor Account</h3>
+          <p class="card-text">Establish yourself as a trusted expert in the real estate industry by setting up a realtor account, and providing invaluable insights and advice to potential customers seeking your professional expertise.</p>
+          <a href="{% url 'create_realtor_account' %}" class="btn btn-primary mt-4">Create an Account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

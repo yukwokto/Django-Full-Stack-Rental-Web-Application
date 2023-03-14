@@ -1,0 +1,49 @@
+{% extends 'main.html'%} {% block content %}
+
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'styles/threads.css' %}"
+/>
+
+<div class="big-wrapper">
+
+  <h2>Message(s)</h2>
+  <div class="message-thread">
+
+{% for thread in threads %}
+<div>
+    {% if thread.user1.username == request.user.username %}
+
+    <!--Display people's name-->
+    <h4>@<a href="{% url 'message_page' thread.user2.username %}">{{thread.user2.username}}</a>
+    <!--Display lastest message of the thread-->
+    <span>
+        {% if thread.message_set.exists %} 
+        {{ thread.message_set.latest.content }} 
+        {{ thread.message_set.latest.created_at | timesince }} ago
+        {% endif %}
+    </span>
+    </h4>
+
+    {% else %}
+
+    <!--Display people's name-->
+    <h4>@<a href="{% url 'message_page' thread.user1.username %}">{{thread.user1.username}}</a>
+    <!--Display lastest message of the thread-->
+    <span>
+        {% if thread.message_set.exists %}
+            {{ thread.message_set.latest.content }} 
+            {{ thread.message_set.latest.created_at | timesince }} ago
+        {% endif %}
+    </span>
+    </h4>
+
+    {% endif %}
+</div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}
